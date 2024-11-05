@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+service StudentService {
+	rpc SendStudentMarks(StudentDetails) returns (ResponseMessage);
+	rpc DisplayAllStudents(ResponseMessage) returns (stream StudentDetails);
+	rpc SearchStudent(StudentID) returns (stream StudentDetails);
+	rpc UpdateStudentMarks(StudentUpdate) returns (ResponseMessage);
+	rpc DeleteStudent(StudentID) returns (ResponseMessage);
+}
+
+message StudentDetails {
+	int32 id = 1;
+	string name =2;
+	float grade = 3;
+}
+
+message ResponseMessage{
+	string response = 1;
+}
+
+message StudentUpdate{
+	int32 id = 1;
+	float grade = 2;
+}
+
+message StudentID {
+	int32 id =1;
+}
