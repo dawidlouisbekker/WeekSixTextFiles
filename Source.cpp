@@ -48,7 +48,7 @@ std::string CheckInput(Var& Input, int Options = 0, int MaxLength = -1, float Mi
                 IsValid = false;
                 continue;
             }
-            if (MinValue > 0 && value < MinValue) {
+            if (value < MinValue) {
                 std::cout << "Minimum number is " << MinValue << ". Please try again: ";
                 IsValid = false;
                 continue;
